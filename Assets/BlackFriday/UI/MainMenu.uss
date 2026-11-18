@@ -1,0 +1,66 @@
+.menu-root { flex-direction: row; }
+.menu-left { width: 640px; margin-left: 72px; margin-top: 46px; }
+.menu-panel { margin-top: 8px; }
+
+/* yarı inik kepenk: galvaniz lameller */
+.menu-shade {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 790px;
+    background-color: rgba(16, 16, 20, 0.55);
+    background-image: url("Tex/shutter.png");
+    -unity-background-image-tint-color: rgba(70, 72, 80, 0.88);
+    background-repeat: repeat repeat;
+    background-size: 256px 64px;
+}
+.menu-shade-edge { position: absolute; right: 0; top: 0; bottom: 0; width: 14px; background-color: #FFD91C; border-left-width: 4px; border-color: #17161B; }
+
+/* mağaza tabelası (ışıklı kutu) */
+.logo { margin-bottom: 14px; flex-shrink: 0; align-self: flex-start; }
+.logo-sign {
+    background-color: #17161B; border-radius: 4px; border-width: 4px; border-color: #2E2D35;
+    padding: 10px 30px 0 26px; overflow: hidden;
+}
+.logo-top { font-size: 18px; color: #FFD91C; letter-spacing: 10px; }
+.title { font-size: 104px; color: #FFFFFF; letter-spacing: 2px; margin: -14px 0 -6px 0; padding: 0; }
+.logo-band { margin: 6px -30px 0 -26px; padding: 6px 26px 7px 26px; }
+.logo-band-text { font-size: 20px; color: #FFFFFF; letter-spacing: 6px; }
+.logo-burst { position: absolute; right: -70px; top: -26px; width: 132px; height: 132px; -unity-background-image-tint-color: #E3262F; rotate: 14deg; }
+.logo-burst-text { font-size: 50px; color: #FFFFFF; margin-top: 8px; }
+.logo-burst-sub { font-size: 13px; color: #FFD91C; letter-spacing: 2px; margin-top: -10px; }
+
+/* görev kuponu */
+.brief-wrap { width: 540px; margin-top: 22px; rotate: -1deg; }
+.brief { padding: 8px; }
+.brief-inner { border-width: 2px; border-color: rgba(43, 39, 48, 0.35); border-radius: 2px; padding: 10px 18px 12px 16px; }
+.brief-title { font-size: 26px; color: #D7263D; letter-spacing: 1px; }
+.brief-code { font-size: 14px; color: rgba(43, 39, 48, 0.55); }
+.brief-text { font-size: 17px; color: #2B2730; white-space: normal; margin-top: 2px; -unity-font-definition: url("Fonts/FiraSans-SemiBold.ttf"); }
+.brief-tape { left: 200px; top: -18px; rotate: -3deg; }
+
+/* alt paneller: karton tabela */
+.menu-card { width: 600px; }
+.menu-card-body { padding: 20px 30px 24px 28px; }
+.card-tape { left: 240px; top: -18px; rotate: 3deg; }
+.char-name { font-size: 34px; color: #1E1A16; -unity-text-align: middle-center; }
+.ip-field > Label { min-width: 40px; }
+
+/* bölüm / mod kartları: raf etiketi */
+.card {
+    flex-direction: row; align-items: center;
+    background-color: #F6F2E8; background-image: url("Tex/paper.png"); -unity-background-image-tint-color: #F6F2E8;
+    background-repeat: repeat repeat; background-size: 256px 256px;
+    border-radius: 2px; border-left-width: 10px; border-color: #8A7458;
+    padding: 8px 14px; margin: 4px 0;
+    transition-property: translate, border-color; transition-duration: 0.1s;
+}
+.card:hover { translate: 6px 0; border-color: #E3262F; }
+.card .bf-icon { width: 28px; height: 28px; color: #1E1A16; margin-right: 14px; }
+.card-title { font-size: 21px; color: #1E1A16; -unity-font-definition: url("Fonts/FiraSans-Black.ttf"); }
+.card-desc { font-size: 15px; color: rgba(30, 26, 22, 0.72); white-space: normal; -unity-font-definition: url("Fonts/FiraSans-SemiBold.ttf"); }
+.card--selected { background-color: #FFD91C; -unity-background-image-tint-color: #FFD91C; border-color: #E3262F; }
+.card--locked { opacity: 0.6; background-color: #D8D2C4; -unity-background-image-tint-color: #D8D2C4; }
+.card--locked .bf-icon { color: rgba(30, 26, 22, 0.6); }
+.card--locked:hover { translate: 0 0; border-color: #8A7458; }
+
+.status { font-size: 19px; color: #FF5A50; margin-top: 12px; white-space: normal; }
+.footer { position: absolute; left: 72px; bottom: 20px; flex-direction: row; align-items: center; }
+.footer-text { font-size: 15px; color: rgba(255, 255, 255, 0.7); }

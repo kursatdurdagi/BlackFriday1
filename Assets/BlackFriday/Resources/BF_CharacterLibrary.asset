@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddd86d498336df448b75fb264079eb9, type: 3}
+  m_Name: BF_CharacterLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::BlackFriday.CharacterLibrary
+  playerModels:
+  - {fileID: 1920635340617373763, guid: 6b5cb76a6cc08374d8ceec172cfdf595, type: 3}
+  - {fileID: 3475303766718695994, guid: 7bad120b16b30c9469cdc24f00172e8e, type: 3}
+  - {fileID: 6665818080539461372, guid: 23d78590145e8a6468557ed7e9a7375e, type: 3}
+  - {fileID: 1985406203506236615, guid: 8e205f90c93c31b47a5f575f019307d5, type: 3}
+  - {fileID: 4862569010342034474, guid: 8cd1b43abcdccfb43aeeddc83a266d89, type: 3}
+  - {fileID: 2006241420966478114, guid: a2a1f28517f97924fb9dd85eede7ea79, type: 3}
+  - {fileID: 8102640804399033471, guid: 1fe5929f7a900ee4eb1899e20890d936, type: 3}
+  - {fileID: 6666330837609709247, guid: 2bc29eb56b7e8ab458360d110a2567af, type: 3}
+  playerModelNames:
+  - Kemal
+  - Zeynep
+  - Murat
+  - Elif
+  - Burak
+  - "Ay\u015Fe"
+  - Emre
+  - Selin
+  npcModels:
+  - {fileID: 7482117757529021522, guid: bbd0a08841ec02b4d864230d7426d6fa, type: 3}
+  - {fileID: 238821500099611240, guid: de805e9d142844445b0e2d1d44bb92d3, type: 3}
+  - {fileID: 165937969809836344, guid: f117e930b1cc1394c8126c93b71a31dd, type: 3}
+  - {fileID: 5480523942486365495, guid: 2672242a1013b1541b94c9635996abb9, type: 3}
+  - {fileID: 7743666105794025975, guid: 78f2b532c110b3e448b9056033376dac, type: 3}
+  - {fileID: 1039589271881371001, guid: 1516a6359069cd248a5d37bb8dda2b37, type: 3}
+  - {fileID: 2963611875381615762, guid: 9ccb86255284bcc45870216c1cafb360, type: 3}
+  - {fileID: 400433478877116131, guid: 3ee47754195d4af409d0cba3528b1284, type: 3}
+  - {fileID: 8418264148179392999, guid: 0c68cdcdabb11824399c322a487baa2a, type: 3}
+  - {fileID: 7883996476317222122, guid: 0c0b6201ca54e5f4ebfec344830982f5, type: 3}
+  - {fileID: 9213907632177448651, guid: 69d8a61fe1f884840be32f4afa72f3db, type: 3}
+  - {fileID: 5193800537443104613, guid: e4e4cd96f5a6a0e428f59dc033d3cb55, type: 3}
+  - {fileID: 4155572306897743540, guid: c16e9b9c368feb6449a298e65aae2c2f, type: 3}
+  - {fileID: 6952111033012048780, guid: c6a8c160a48ef7c4fa0f33a17ae75fd0, type: 3}
+  - {fileID: 8514337561921593164, guid: 9d2c5b70bcbd96047b61fba2d11d4862, type: 3}
+  - {fileID: 228345909284938057, guid: 136af5d05abefe64fab0a77176eb772d, type: 3}
+  - {fileID: 9206606408427132800, guid: d32e95fc93ef20b4cb0b375dec95e8c9, type: 3}
+  - {fileID: 5460656749799946372, guid: 2b42f819f2ba6ec44931fc6576d602a5, type: 3}
+  controller: {fileID: 9100000, guid: efaf18af59b0f0945b17f7e3dfc13e70, type: 2}

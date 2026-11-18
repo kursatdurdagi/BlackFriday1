@@ -1,0 +1,199 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:bf="BlackFriday" editor-extension-mode="False">
+    <ui:Style src="BFTheme.uss" />
+    <ui:Style src="HUD.uss" />
+    <ui:VisualElement name="hud" class="bf-root hud" picking-mode="Ignore">
+        <ui:VisualElement name="name-layer" class="fill" picking-mode="Ignore" />
+
+        <!-- kasa şeridi tabelası (en yakın kasa) -->
+        <ui:VisualElement name="marker" class="marker hidden" picking-mode="Ignore">
+            <ui:VisualElement class="marker-box" picking-mode="Ignore">
+                <ui:Label text="KASA" class="marker-kasa" />
+                <ui:Label name="marker-text" text="12 m" class="marker-text" />
+            </ui:VisualElement>
+            <ui:VisualElement class="marker-pole" picking-mode="Ignore" />
+        </ui:VisualElement>
+
+        <!-- alışveriş listesi: bantla yapıştırılmış termal fiş -->
+        <ui:VisualElement name="list-panel" class="list-panel" picking-mode="Ignore">
+            <ui:VisualElement class="shadow" picking-mode="Ignore" />
+            <ui:VisualElement class="paper receipt" picking-mode="Ignore">
+                <ui:Label text="MEGA AVM" class="font-print receipt-store" />
+                <ui:Label text="ALIŞVERİŞ LİSTESİ" class="font-sign receipt-title" />
+                <ui:Label text="BLACK FRIDAY  ·  KAMPANYA FİŞİ" class="font-print receipt-sub" />
+                <bf:BFDash />
+                <ui:VisualElement name="list-container" picking-mode="Ignore" />
+                <bf:BFDash />
+                <ui:VisualElement class="row">
+                    <ui:Label text="KASADA" class="font-print list-total grow" />
+                    <ui:Label name="delivered" text="0 / 0" class="font-print list-total" />
+                </ui:VisualElement>
+                <bf:BFBarcode class="receipt-barcode" seed="11" />
+                <ui:Label text="*** TEŞEKKÜRLER ***" class="font-print receipt-thanks" />
+                <ui:VisualElement class="tear" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement class="tape list-tape" picking-mode="Ignore" />
+        </ui:VisualElement>
+
+        <!-- süre: yazar kasa LCD ekranı -->
+        <ui:VisualElement class="top-center" picking-mode="Ignore">
+            <ui:VisualElement name="timer-ring" class="bezel timer-box" picking-mode="Ignore">
+                <ui:Label name="mode-name" text="KALAN SÜRE" class="timer-caption" />
+                <ui:VisualElement class="lcd timer-lcd" picking-mode="Ignore">
+                    <bf:BFSeg name="timer" text="4:00" class="timer-seg" />
+                </ui:VisualElement>
+                <ui:VisualElement class="timer-bar" picking-mode="Ignore">
+                    <ui:VisualElement name="timer-fill" class="timer-fill" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <!-- flaş indirim: tavandan sarkan kırmızı kampanya şeridi -->
+            <ui:VisualElement name="flash-banner" class="flash-banner hidden" picking-mode="Ignore">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="promo-label flash-body" picking-mode="Ignore">
+                    <ui:Label text="FLAŞ" class="font-sign flash-tag" />
+                    <ui:Label name="flash-text" text="FLAŞ İNDİRİM" class="font-sign flash-text" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- puan: raf rayına takılı fiyat etiketi -->
+        <ui:VisualElement class="top-right" picking-mode="Ignore">
+            <ui:VisualElement class="score-wrap" picking-mode="Ignore">
+                <ui:VisualElement class="rail score-rail" picking-mode="Ignore" />
+                <ui:VisualElement class="shelf-label score-tag" picking-mode="Ignore">
+                    <ui:VisualElement class="promo-label score-head" picking-mode="Ignore">
+                        <ui:Label text="BLACK FRIDAY" class="font-black score-head-text" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="row score-body" picking-mode="Ignore">
+                        <ui:VisualElement class="score-left" picking-mode="Ignore">
+                            <ui:Label text="EKİP PUANI" class="font-black score-caption" />
+                            <bf:BFBarcode class="score-barcode" seed="5" />
+                        </ui:VisualElement>
+                        <ui:Label name="score" text="0" class="font-sign score" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="combo" class="sticker combo hidden" picking-mode="Ignore">
+                    <ui:Label name="combo-text" text="x2" class="font-sign combo-text" />
+                    <ui:Label text="KOMBO" class="font-black combo-sub" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label name="fps-counter" text="" class="fps-counter" picking-mode="Ignore" />
+            <ui:VisualElement name="feed" class="feed" picking-mode="Ignore" />
+        </ui:VisualElement>
+
+        <bf:BFCrosshair name="crosshair" class="crosshair" />
+
+        <!-- geri sayım: büyük indirim çıkartması -->
+        <ui:VisualElement name="center-wrap" class="center-wrap hidden" picking-mode="Ignore">
+            <ui:VisualElement class="sticker center-sticker" picking-mode="Ignore">
+                <ui:Label name="center-big" text="3" class="font-sign center-big" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- alt: ürün etiketi + tuşlar, enerji -->
+        <ui:VisualElement class="bottom-center" picking-mode="Ignore">
+            <ui:VisualElement name="prompt" class="prompt prompt--hidden" picking-mode="Ignore" />
+            <ui:VisualElement class="stamina-row" picking-mode="Ignore">
+                <ui:Label text="ENERJİ" class="font-black stamina-label" />
+                <ui:VisualElement class="stamina-bg">
+                    <ui:VisualElement name="stamina-fill" class="stamina-fill" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement class="cam-mode" picking-mode="Ignore">
+            <ui:Label name="cam-mode" text="TPS" class="cam-mode-text" />
+            <ui:Label text="V" class="key" style="margin-right: 0;" />
+        </ui:VisualElement>
+
+        <!-- lobi: kraft karton tabela -->
+        <ui:VisualElement name="lobby-panel" class="lobby-panel">
+            <ui:VisualElement class="shadow" picking-mode="Ignore" />
+            <ui:VisualElement class="kraft on-kraft lobby-body">
+                <ui:VisualElement class="promo-label lobby-ribbon" picking-mode="Ignore">
+                    <ui:Label text="BLACK FRIDAY · %90'A VARAN İNDİRİM" class="font-black lobby-ribbon-text" />
+                </ui:VisualElement>
+                <ui:Label text="KAPILAR AÇILMAK ÜZERE!" class="font-sign lobby-title" />
+                <ui:Label name="lobby-mode" text="" class="label-small lobby-mode" />
+                <ui:Label name="lobby-desc" text="" class="lobby-story" />
+                <ui:VisualElement class="row" style="margin-bottom: 4px;">
+                    <ui:Label name="lobby-count" text="EKİP 1/4" class="font-sign lobby-count" />
+                </ui:VisualElement>
+                <ui:VisualElement name="lobby-players" class="row" style="flex-wrap: wrap;" />
+                <ui:Label name="lobby-ip" text="" class="label-small" />
+                <ui:VisualElement name="controls" class="controls-grid" />
+                <ui:Button name="btn-start" class="bf-button bf-button--primary" style="margin-top: 12px; align-self: flex-start;">
+                    <ui:VisualElement class="btn-strip" />
+                    <ui:Label text="KAPILARI AÇ" />
+                    <ui:Label text="Enter" class="key" />
+                </ui:Button>
+                <ui:Label name="lobby-wait" text="Host'un kapıları açması bekleniyor..." class="label-small" style="margin-top: 12px;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="tape lobby-tape-l" picking-mode="Ignore" />
+            <ui:VisualElement class="tape lobby-tape-r" picking-mode="Ignore" />
+        </ui:VisualElement>
+
+        <!-- bitiş: kasa fişi -->
+        <ui:VisualElement name="end-panel" class="end-panel hidden">
+            <ui:VisualElement class="end-receipt-wrap">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="paper receipt end-receipt">
+                    <ui:VisualElement class="tear tear--top" picking-mode="Ignore" />
+                    <ui:Label text="MEGA AVM" class="font-sign end-head" />
+                    <ui:Label text="BLACK FRIDAY ALIŞVERİŞ FİŞİ" class="font-print receipt-sub" />
+                    <ui:Label text="KASA 03   FİŞ NO 0042   23:59" class="font-print receipt-sub" />
+                    <bf:BFDash />
+                    <ui:VisualElement name="end-lines" />
+                    <bf:BFDash />
+                    <ui:VisualElement class="row">
+                        <ui:Label text="TOPLAM" class="font-sign end-total-name" />
+                        <ui:Label name="end-score" text="0" class="font-sign end-total-val" />
+                    </ui:VisualElement>
+                    <bf:BFStars name="end-stars" class="end-stars" />
+                    <ui:Label name="end-detail" text="" class="font-print end-detail" />
+                    <bf:BFBarcode class="receipt-barcode" seed="29" />
+                    <ui:Label text="*** BİZİ TERCİH ETTİĞİNİZ İÇİN TEŞEKKÜRLER ***" class="font-print receipt-thanks" />
+                    <ui:VisualElement class="end-stamp-wrap" picking-mode="Ignore">
+                        <ui:Label name="end-title" text="LİSTE TAMAM" class="font-sign end-stamp" />
+                        <ui:VisualElement class="stamp-wear" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="tear" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="end-buttons">
+                <ui:Button name="btn-restart" class="bf-button bf-button--primary">
+                    <ui:VisualElement class="btn-strip" />
+                    <ui:Label text="TEKRAR" />
+                    <ui:Label text="Enter" class="key" />
+                </ui:Button>
+                <ui:Button name="btn-menu" class="bf-button">
+                    <ui:VisualElement class="btn-strip" />
+                    <ui:Label text="ANA MENÜ" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- mola: karton tabela -->
+        <ui:VisualElement name="pause-panel" class="fill hidden">
+            <ui:VisualElement class="dim" />
+            <ui:VisualElement class="pause-panel">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="kraft on-kraft pause-body">
+                    <ui:Label text="MOLA" class="heading pause-title" />
+                    <ui:Label text="Oyun co-op olduğu için arka planda devam eder." class="label-small" />
+                    <ui:Slider name="sens-slider" label="Fare Hassasiyeti" low-value="0.2" high-value="3" class="bf-field" />
+                    <ui:Toggle name="fps-toggle" label="FPS Kamera" class="bf-field" />
+                    <ui:VisualElement name="pause-controls" class="controls-grid" />
+                    <ui:Button name="btn-resume" class="bf-button bf-button--primary" style="margin-top: 10px;">
+                        <ui:VisualElement class="btn-strip" />
+                        <ui:Label text="DEVAM" />
+                    </ui:Button>
+                    <ui:Button name="btn-pause-menu" class="bf-button">
+                        <ui:VisualElement class="btn-strip" />
+                        <ui:Label text="ANA MENÜYE DÖN" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement class="tape pause-tape" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

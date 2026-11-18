@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3554e79325b123644a4ec075ecb8149d, type: 3}
+  m_Name: BF_ProductDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::BlackFriday.ProductDatabase
+  products:
+  - id: 0
+    displayName: Televizyon
+    uiColor: {r: 0.2, g: 0.8, b: 0.95, a: 1}
+    prefab: {fileID: 4869298578166022131, guid: 16865c4f85bc9ab49bcc4db4ecaf701e, type: 3}
+    carrySpeed: 0.72
+    points: 300
+  - id: 1
+    displayName: Oyun Konsolu
+    uiColor: {r: 0.55, g: 0.35, b: 0.9, a: 1}
+    prefab: {fileID: 7640480364869596427, guid: 461570ee09242ad4dad3abfe41c16672, type: 3}
+    carrySpeed: 0.95
+    points: 220
+  - id: 2
+    displayName: Tost Makinesi
+    uiColor: {r: 0.95, g: 0.22, b: 0.25, a: 1}
+    prefab: {fileID: 5738625725173253458, guid: 468f762f0dc6a7544855d0324a6f9220, type: 3}
+    carrySpeed: 0.9
+    points: 120
+  - id: 3
+    displayName: "Spor Ayakkab\u0131"
+    uiColor: {r: 1, g: 0.55, b: 0.15, a: 1}
+    prefab: {fileID: 5882576510751535329, guid: fe4eff2847965b746ad23dc90b0d0dde, type: 3}
+    carrySpeed: 1
+    points: 100
+  - id: 4
+    displayName: "Kulakl\u0131k"
+    uiColor: {r: 1, g: 0.45, b: 0.7, a: 1}
+    prefab: {fileID: 7323374745551546329, guid: f26781b8e2f5fde4eab0aa730fc92864, type: 3}
+    carrySpeed: 1
+    points: 140
+  - id: 5
+    displayName: "Oyuncak Ay\u0131"
+    uiColor: {r: 0.62, g: 0.4, b: 0.25, a: 1}
+    prefab: {fileID: 8576049241142830430, guid: 4ef0b30ae7776b344a135ffb5dcf9b9e, type: 3}
+    carrySpeed: 1
+    points: 80
+  - id: 6
+    displayName: Blender
+    uiColor: {r: 0.3, g: 0.8, b: 0.35, a: 1}
+    prefab: {fileID: 7032144761293537610, guid: a51e94c95fbc7694abf1210c3f0437e0, type: 3}
+    carrySpeed: 0.9
+    points: 120
+  - id: 7
+    displayName: "Ak\u0131ll\u0131 Telefon"
+    uiColor: {r: 1, g: 0.82, b: 0.12, a: 1}
+    prefab: {fileID: 4798821501885289056, guid: a9a760df0f7fa054cb84cdb8dfb75397, type: 3}
+    carrySpeed: 1
+    points: 250
+  - id: 8
+    displayName: "\xC7anta"
+    uiColor: {r: 0.85, g: 0.25, b: 0.6, a: 1}
+    prefab: {fileID: 4899107214688089356, guid: c9bf7315c08541d489125cc967068050, type: 3}
+    carrySpeed: 1
+    points: 160
+  - id: 9
+    displayName: "Parf\xFCm"
+    uiColor: {r: 0.75, g: 0.55, b: 1, a: 1}
+    prefab: {fileID: 2218210217370715989, guid: 23f6133bbb8c17a4f934571fbd3622d0, type: 3}
+    carrySpeed: 1
+    points: 180

@@ -1,0 +1,177 @@
+/* BLACK FRIDAY — market teması
+   Malzemeler: termal fiş kâğıdı, raf etiketi (sarı/kırmızı), kraft karton tabela, koli bandı,
+   yazar kasa tuşları ve LCD ekranı, kasa şeridi ışıklı tabelası.
+   Yazı tipleri: Fira Sans (arayüz), Anton (fiyat / tabela), Anonymous Pro (fiş baskısı). */
+
+.bf-root {
+    flex-grow: 1;
+    color: #FFFFFF;
+    -unity-font-definition: url("Fonts/FiraSans-Bold.ttf");
+    -unity-font-style: normal;
+}
+.hidden { display: none; }
+.row { flex-direction: row; align-items: center; }
+.grow { flex-grow: 1; }
+
+.font-sign { -unity-font-definition: url("Fonts/Anton-Regular.ttf"); }
+.font-print { -unity-font-definition: url("Fonts/AnonymousPro-Bold.ttf"); }
+.font-black { -unity-font-definition: url("Fonts/FiraSans-Black.ttf"); }
+.font-semi { -unity-font-definition: url("Fonts/FiraSans-SemiBold.ttf"); }
+
+.bf-icon { width: 26px; height: 26px; flex-shrink: 0; }
+.bf-dash { height: 8px; color: rgba(40, 36, 44, 0.42); align-self: stretch; margin: 4px 0; }
+
+/* ---------- malzemeler ---------- */
+/* yumuşak gölge: panelin arkasında, 9-dilim */
+.shadow {
+    position: absolute; left: -22px; top: -16px; right: -22px; bottom: -30px;
+    background-image: url("Tex/shadow.png");
+    -unity-slice-left: 44; -unity-slice-right: 44; -unity-slice-top: 44; -unity-slice-bottom: 44;
+    opacity: 0.85;
+}
+/* termal fiş kâğıdı */
+.paper {
+    background-color: #F6F2E8;
+    background-image: url("Tex/paper.png");
+    -unity-background-image-tint-color: #F6F2E8;
+    background-repeat: repeat repeat;
+    background-size: 256px 256px;
+    color: #2B2730;
+}
+/* fişin yırtık alt kenarı */
+.tear {
+    position: absolute; left: 0; right: 0; bottom: -12px; height: 12px;
+    background-image: url("Tex/tear.png");
+    -unity-background-image-tint-color: #F6F2E8;
+    background-repeat: repeat no-repeat;
+    background-size: 28px 12px;
+}
+.tear--top { top: -12px; bottom: auto; background-image: url("Tex/tear_top.png"); }
+/* koli bandı parçası */
+.tape {
+    position: absolute; width: 120px; height: 34px;
+    background-image: url("Tex/tape.png");
+    -unity-background-scale-mode: stretch-to-fill;
+}
+/* kraft karton */
+.kraft {
+    background-color: #C49C6C;
+    background-image: url("Tex/kraft.png");
+    background-repeat: repeat repeat;
+    background-size: 256px 256px;
+    border-radius: 4px;
+    color: #1E1A16;
+}
+/* raf etiketi (sarı kâğıt) */
+.shelf-label {
+    background-image: url("Tex/paper.png");
+    -unity-background-image-tint-color: #FFD91C;
+    background-color: #FFD91C;
+    background-repeat: repeat repeat;
+    background-size: 256px 256px;
+    color: #17161B;
+}
+/* indirim etiketi (kırmızı kâğıt) */
+.promo-label {
+    background-image: url("Tex/paper.png");
+    -unity-background-image-tint-color: #E3262F;
+    background-color: #E3262F;
+    background-repeat: repeat repeat;
+    background-size: 256px 256px;
+    color: #FFFFFF;
+}
+/* yuvarlak çıkartma */
+.sticker {
+    background-image: url("Tex/sticker.png");
+    -unity-background-scale-mode: stretch-to-fill;
+    align-items: center; justify-content: center;
+}
+/* koyu plastik çerçeve (yazar kasa) */
+.bezel {
+    background-image: url("Tex/bezel.png");
+    -unity-slice-left: 16; -unity-slice-right: 16; -unity-slice-top: 16; -unity-slice-bottom: 16;
+}
+/* LCD camı */
+.lcd {
+    background-image: url("Tex/lcd.png");
+    -unity-background-scale-mode: stretch-to-fill;
+    border-radius: 4px;
+    border-width: 1px; border-color: #06090A;
+}
+/* metal raf rayı */
+.rail {
+    background-image: url("Tex/rail.png");
+    -unity-slice-left: 4; -unity-slice-right: 4; -unity-slice-top: 8; -unity-slice-bottom: 8;
+}
+
+/* ---------- yazı stilleri ---------- */
+.heading { font-size: 34px; color: #1E1A16; -unity-font-definition: url("Fonts/Anton-Regular.ttf"); letter-spacing: 1px; margin-bottom: 8px; }
+.label { font-size: 21px; color: #FFFFFF; white-space: normal; }
+.label-small { font-size: 16px; color: rgba(255, 255, 255, 0.72); white-space: normal; -unity-font-definition: url("Fonts/FiraSans-SemiBold.ttf"); }
+.on-kraft .label-small { color: rgba(30, 26, 22, 0.78); }
+.on-kraft .label { color: #1E1A16; }
+
+/* ---------- yazar kasa tuşu ---------- */
+.key {
+    font-size: 15px;
+    color: #232026;
+    background-image: url("Tex/key.png");
+    -unity-slice-left: 10; -unity-slice-right: 10; -unity-slice-top: 10; -unity-slice-bottom: 10;
+    padding: 3px 10px 8px 10px;
+    margin-right: 7px;
+    -unity-text-align: middle-center;
+    min-width: 32px;
+    -unity-font-definition: url("Fonts/FiraSans-Black.ttf");
+}
+.key-text { font-size: 17px; color: #FFFFFF; margin-right: 16px; -unity-font-definition: url("Fonts/FiraSans-SemiBold.ttf"); }
+.on-kraft .key-text, .on-paper .key-text { color: #1E1A16; }
+
+/* ---------- butonlar: raf etiketi ---------- */
+.bf-button {
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    min-width: 340px;
+    margin: 5px 0;
+    padding: 0 18px 0 0;
+    background-color: #F6F2E8;
+    background-image: url("Tex/paper.png");
+    -unity-background-image-tint-color: #F6F2E8;
+    background-repeat: repeat repeat;
+    background-size: 256px 256px;
+    border-width: 0;
+    border-radius: 3px;
+    color: #1E1A16;
+    font-size: 24px;
+    -unity-text-align: middle-left;
+    transition-property: translate, scale, -unity-background-image-tint-color, background-color;
+    transition-duration: 0.09s;
+}
+.bf-button > .bf-icon { width: 28px; height: 28px; margin: 0 14px 0 0; color: #1E1A16; }
+.bf-button > Label { font-size: 24px; color: #1E1A16; padding: 0; margin: 0; -unity-font-definition: url("Fonts/FiraSans-Black.ttf"); letter-spacing: 1px; }
+.bf-button > .key { margin-left: 12px; margin-right: 0; font-size: 14px; }
+/* etiketin sol şeridi: fiyat kodu gibi */
+.btn-strip { width: 12px; align-self: stretch; background-color: #E3262F; margin-right: 14px; border-radius: 3px 0 0 3px; }
+.bf-button:hover {
+    -unity-background-image-tint-color: #FFD91C; background-color: #FFD91C;
+    translate: 8px 0;
+}
+.bf-button:active { scale: 0.98 0.98; }
+.bf-button--primary {
+    -unity-background-image-tint-color: #E3262F; background-color: #E3262F;
+}
+.bf-button--primary > Label, .bf-button--primary > .bf-icon { color: #FFFFFF; }
+.bf-button > Label.key, .bf-button--primary > Label.key { color: #232026; font-size: 14px; letter-spacing: 0; -unity-font-definition: url("Fonts/FiraSans-Black.ttf"); }
+.bf-button--primary > .btn-strip { background-color: #FFD91C; }
+.bf-button--primary:hover { -unity-background-image-tint-color: #FF3B44; background-color: #FF3B44; }
+.bf-button--small { min-width: 58px; width: 58px; padding: 0; justify-content: center; }
+.bf-button--small > .bf-icon { margin: 0; }
+
+/* ---------- alanlar ---------- */
+.bf-field { margin: 5px 0; font-size: 19px; color: #1E1A16; }
+.bf-field > Label { color: #1E1A16; min-width: 250px; font-size: 19px; -unity-font-definition: url("Fonts/FiraSans-Bold.ttf"); }
+.bf-field .unity-base-field__input { background-color: #F6F2E8; border-color: #8A7458; color: #1E1A16; border-radius: 3px; }
+.bf-field .unity-toggle__checkmark { background-color: #F6F2E8; border-color: #1E1A16; border-width: 2px; border-radius: 2px; -unity-background-image-tint-color: #E3262F; }
+.bf-field .unity-base-slider__tracker { background-color: #8A7458; border-width: 0; height: 6px; margin-top: -3px; }
+.bf-field .unity-base-slider__dragger { background-color: #E3262F; border-color: #1E1A16; border-width: 2px; border-radius: 3px; width: 18px; height: 26px; margin-top: -12px; }
+.bf-field .unity-text-field__input, .bf-field .unity-base-popup-field__input { -unity-font-definition: url("Fonts/AnonymousPro-Bold.ttf"); font-size: 20px; }

@@ -1,0 +1,137 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:bf="BlackFriday" editor-extension-mode="False">
+    <ui:Style src="BFTheme.uss" />
+    <ui:Style src="MainMenu.uss" />
+    <ui:VisualElement name="root" class="bf-root menu-root">
+        <!-- sol: yarı inik kepenk -->
+        <ui:VisualElement class="menu-shade" picking-mode="Ignore">
+            <ui:VisualElement class="menu-shade-edge" picking-mode="Ignore" />
+        </ui:VisualElement>
+        <ui:VisualElement name="left" class="menu-left">
+            <!-- mağaza tabelası -->
+            <ui:VisualElement name="title-block" class="logo">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="logo-sign">
+                    <ui:Label text="MEGA AVM" class="font-black logo-top" />
+                    <ui:Label text="BLACK FRIDAY" class="font-sign title" />
+                    <ui:VisualElement class="promo-label logo-band">
+                        <ui:Label text="İNDİRİM KAOSU  ·  CO-OP" class="font-black logo-band-text" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement class="sticker logo-burst">
+                    <ui:Label text="%90" class="font-sign logo-burst-text" />
+                    <ui:Label text="İNDİRİM" class="font-black logo-burst-sub" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="main-panel" class="menu-panel">
+                <ui:Button name="btn-play" class="bf-button bf-button--primary">
+                    <ui:VisualElement class="btn-strip" /><ui:Label text="ALIŞVERİŞE BAŞLA" />
+                </ui:Button>
+                <ui:Button name="btn-character" class="bf-button">
+                    <ui:VisualElement class="btn-strip" /><ui:Label text="KARAKTER" />
+                </ui:Button>
+                <ui:Button name="btn-settings" class="bf-button">
+                    <ui:VisualElement class="btn-strip" /><ui:Label text="AYARLAR" />
+                </ui:Button>
+                <ui:Button name="btn-quit" class="bf-button">
+                    <ui:VisualElement class="btn-strip" /><ui:Label text="ÇIKIŞ" />
+                </ui:Button>
+                <!-- görev kuponu: kesilebilir kenarlı fiş -->
+                <ui:VisualElement class="brief-wrap">
+                    <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                    <ui:VisualElement class="paper brief">
+                        <ui:VisualElement class="brief-inner">
+                            <ui:VisualElement class="row">
+                                <ui:Label text="BUGÜNÜN GÖREVİ" class="font-sign brief-title grow" />
+                                <ui:Label text="KUPON 001" class="font-print brief-code" />
+                            </ui:VisualElement>
+                            <ui:Label text="Mega AVM'de her şey %90 indirimli ve kapılar birazdan açılıyor. Ekibini topla, ortak listeyi kasaya yetiştir; kapıcı müşterilere ürün kaptırma!" class="brief-text" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="tear" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="tape brief-tape" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="play-panel" class="menu-panel menu-card hidden">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="kraft on-kraft menu-card-body">
+                    <ui:Label text="BÖLÜM" class="heading" />
+                    <ui:VisualElement name="level-list" />
+                    <ui:Label text="MOD" class="heading" style="margin-top: 8px;" />
+                    <ui:VisualElement name="mode-list" />
+                    <ui:VisualElement class="row" style="margin-top: 10px;">
+                        <ui:Button name="btn-host" class="bf-button bf-button--primary" style="min-width: 260px; margin-right: 10px;">
+                            <ui:VisualElement class="btn-strip" /><ui:Label text="CO-OP KUR" />
+                        </ui:Button>
+                        <ui:Button name="btn-solo" class="bf-button" style="min-width: 220px;">
+                            <ui:VisualElement class="btn-strip" /><ui:Label text="TEK BAŞINA" />
+                        </ui:Button>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="row" style="margin-top: 4px;">
+                        <ui:TextField name="ip-field" label="IP" value="localhost" class="bf-field ip-field" style="flex-grow: 1; margin-right: 10px;" />
+                        <ui:Button name="btn-join" class="bf-button" style="min-width: 150px;">
+                            <ui:VisualElement class="btn-strip" /><ui:Label text="KATIL" />
+                        </ui:Button>
+                    </ui:VisualElement>
+                    <ui:Label text="Arkadaşın co-op kurduysa onun IP adresini yazıp KATIL'a bas. (Port: 7777)" class="label-small" />
+                    <ui:Button name="btn-play-back" class="bf-button" style="margin-top: 8px; min-width: 200px; align-self: flex-start;">
+                        <ui:VisualElement class="btn-strip" /><ui:Label text="GERİ" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement class="tape card-tape" picking-mode="Ignore" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="character-panel" class="menu-panel menu-card hidden">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="kraft on-kraft menu-card-body">
+                    <ui:Label text="KARAKTER" class="heading" />
+                    <ui:TextField name="name-field" label="İsim" max-length="16" class="bf-field" />
+                    <ui:VisualElement class="row" style="margin-top: 10px;">
+                        <ui:Button name="btn-prev" class="bf-button bf-button--small"><bf:BFIcon kind="ChevronLeft" /></ui:Button>
+                        <ui:Label name="char-name" text="Karakter 1" class="font-sign grow char-name" />
+                        <ui:Button name="btn-next" class="bf-button bf-button--small"><bf:BFIcon kind="ChevronRight" /></ui:Button>
+                    </ui:VisualElement>
+                    <ui:Button name="btn-char-back" class="bf-button" style="margin-top: 14px; min-width: 200px; align-self: flex-start;">
+                        <ui:VisualElement class="btn-strip" /><ui:Label text="TAMAM" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement class="tape card-tape" picking-mode="Ignore" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="settings-panel" class="menu-panel menu-card hidden">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="kraft on-kraft menu-card-body">
+                    <ui:Label text="AYARLAR" class="heading" />
+                    <ui:Slider name="vol-slider" label="Ses" low-value="0" high-value="1" class="bf-field" />
+                    <ui:Slider name="sens-slider" label="Fare Hassasiyeti" low-value="0.2" high-value="3" class="bf-field" />
+                    <ui:Toggle name="invy-toggle" label="Y Eksenini Ters Çevir" class="bf-field" />
+                    <ui:Toggle name="fps-toggle" label="Varsayılan Kamera: FPS" class="bf-field" />
+                    <ui:Toggle name="fs-toggle" label="Tam Ekran" class="bf-field" />
+                    <ui:Toggle name="vsync-toggle" label="VSync (kapalı = sınırsız FPS)" class="bf-field" />
+                    <ui:Toggle name="showfps-toggle" label="FPS Göster" class="bf-field" />
+                    <ui:DropdownField name="quality-dd" label="Kalite" class="bf-field" />
+                    <ui:Button name="btn-settings-back" class="bf-button" style="margin-top: 12px; min-width: 200px; align-self: flex-start;">
+                        <ui:VisualElement class="btn-strip" /><ui:Label text="TAMAM" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement class="tape card-tape" picking-mode="Ignore" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="connecting-panel" class="menu-panel menu-card hidden">
+                <ui:VisualElement class="shadow" picking-mode="Ignore" />
+                <ui:VisualElement class="kraft on-kraft menu-card-body">
+                    <ui:Label name="connecting-label" text="Bağlanıyor..." class="heading" />
+                    <ui:Button name="btn-cancel" class="bf-button">
+                        <ui:VisualElement class="btn-strip" /><ui:Label text="İPTAL" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:Label name="status-label" text="" class="status" />
+        </ui:VisualElement>
+        <ui:VisualElement class="footer">
+            <ui:Label text="v0.7  ·  Bölüm 1 / Mod 1  ·  1-4 oyuncu co-op" class="font-print footer-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
